@@ -1,0 +1,15 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+dist/
+build/
+outputs/tables/*.csv
+outputs/figures/*.png
+!outputs/tables/.gitkeep
+!outputs/figures/.gitkeep
+.ipynb_checkpoints/
+.DS_Store
