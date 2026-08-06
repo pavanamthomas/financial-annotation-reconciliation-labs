@@ -71,13 +71,15 @@ def expand_range(spec: str) -> list[str]:
 
 
 def neighbours(address: str) -> list[str]:
-    """Four-adjacent cells (up, down, left, right)."""
+    """Adjacent cells, including diagonals."""
     row, col = parse_address(address)
     out: list[str] = []
-    if row > 0:
-        out.append(format_address(row - 1, col))
-    out.append(format_address(row + 1, col))
-    if col > 0:
-        out.append(format_address(row, col - 1))
-    out.append(format_address(row, col + 1))
+    for dr in (-1, 0, 1):
+        for dc in (-1, 0, 1):
+            if dr == 0 and dc == 0:
+                continue
+            r, c = row + dr, col + dc
+            if r < 0 or c < 0:
+                continue
+            out.append(format_address(r, c))
     return out
