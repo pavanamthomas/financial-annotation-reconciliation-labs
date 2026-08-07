@@ -22,3 +22,7 @@ def test_neighbours_include_adjacent_row():
     nbs = neighbours("B4")
     assert "B5" in nbs
     assert "B3" in nbs
+    # diagonals used to fire RANGE_OFF_BY_ONE on a two-line total
+    assert "C3" not in nbs
+    assert "C5" not in nbs
+    assert "C4" in nbs
