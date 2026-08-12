@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fdavlab"
+version = "0.1.0"
+description = "Validate constructed financial-document annotations. Passing schema is not a validated extraction."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+  { name = "Dr. Pavanam Thomas", email = "thomaspavanam@gmail.com" },
+]
+requires-python = ">=3.11"
+dependencies = [
+  "numpy",
+  "pandas",
+  "pyyaml",
+]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.11",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.urls]
+Homepage = "https://cursor.com/codebase/pavanam-thomas/fin-check"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"

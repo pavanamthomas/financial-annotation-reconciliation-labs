@@ -1,0 +1,27 @@
+id: INV-CLEAN-TIE
+doc_type: invoice
+currency: USD
+notes: Line items plus tax equal the labelled total. Error-level checks stay quiet.
+text: |
+  INVOICE INV-2001
+  From: Acme Parts
+  Bill to: Beta Stores
+  Date: 2026-01-15
+  Bolts $100.00
+  Nuts $50.00
+  Subtotal $150.00
+  Tax $12.00
+  Total $162.00
+gold:
+  - {id: G-L1, start: 78, end: 85, label: line_item, parsed_value: 100.0}
+  - {id: G-L2, start: 91, end: 97, label: line_item, parsed_value: 50.0}
+  - {id: G-SUB, start: 107, end: 114, label: subtotal, parsed_value: 150.0}
+  - {id: G-TAX, start: 119, end: 125, label: tax, parsed_value: 12.0}
+  - {id: G-TOT, start: 132, end: 139, label: total, parsed_value: 162.0}
+candidate:
+  - {id: A-L1, start: 78, end: 85, label: line_item, parsed_value: 100.0}
+  - {id: A-L2, start: 91, end: 97, label: line_item, parsed_value: 50.0}
+  - {id: A-SUB, start: 107, end: 114, label: subtotal, parsed_value: 150.0}
+  - {id: A-TAX, start: 119, end: 125, label: tax, parsed_value: 12.0}
+  - {id: A-TOT, start: 132, end: 139, label: total, parsed_value: 162.0}
+rater_b: []

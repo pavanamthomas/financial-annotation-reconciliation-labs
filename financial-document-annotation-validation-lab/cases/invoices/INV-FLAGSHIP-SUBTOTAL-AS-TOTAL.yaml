@@ -1,0 +1,39 @@
+id: INV-FLAGSHIP-SUBTOTAL-AS-TOTAL
+doc_type: invoice
+currency: USD
+notes: >
+  Flagship. Line items 400+600=1000, tax 80, economic total 1080.
+  The span labelled total is the pre-tax subtotal 1000. Schema and
+  parse checks pass. Arithmetic does not.
+text: |
+  INVOICE INV-1042
+  From: Northwind Supplies
+  Bill to: Contoso Retail
+  Date: 2026-03-31
+  Widgets $400.00
+  Gaskets $600.00
+  Subtotal $1,000.00
+  Tax $80.00
+  Total $1,000.00
+gold:
+  - {id: G-ID, start: 8, end: 16, label: invoice_id, parsed_value: INV-1042}
+  - {id: G-FROM, start: 23, end: 41, label: counterparty, parsed_value: Northwind Supplies}
+  - {id: G-TO, start: 51, end: 65, label: counterparty, parsed_value: Contoso Retail}
+  - {id: G-DATE, start: 72, end: 82, label: date, parsed_value: "2026-03-31"}
+  - {id: G-L1, start: 91, end: 98, label: line_item, parsed_value: 400.0}
+  - {id: G-L2, start: 107, end: 114, label: line_item, parsed_value: 600.0}
+  - {id: G-SUB, start: 124, end: 133, label: subtotal, parsed_value: 1000.0}
+  - {id: G-TAX, start: 138, end: 144, label: tax, parsed_value: 80.0}
+  - {id: G-TOT, start: 151, end: 160, label: total, parsed_value: 1000.0}
+candidate:
+  - {id: A-ID, start: 8, end: 16, label: invoice_id, parsed_value: INV-1042}
+  - {id: A-FROM, start: 23, end: 41, label: counterparty, parsed_value: Northwind Supplies}
+  - {id: A-TO, start: 51, end: 65, label: counterparty, parsed_value: Contoso Retail}
+  - {id: A-DATE, start: 72, end: 82, label: date, parsed_value: "2026-03-31"}
+  - {id: A-L1, start: 91, end: 98, label: line_item, parsed_value: 400.0}
+  - {id: A-L2, start: 107, end: 114, label: line_item, parsed_value: 600.0}
+  - {id: A-SUB, start: 124, end: 133, label: subtotal, parsed_value: 1000.0}
+  - {id: A-TAX, start: 138, end: 144, label: tax, parsed_value: 80.0}
+  - {id: A-TOT, start: 151, end: 160, label: total, parsed_value: 1000.0}
+rater_b:
+  - {id: B-TOT, start: 151, end: 160, label: subtotal, parsed_value: 1000.0}
