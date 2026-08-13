@@ -1,0 +1,21 @@
+id: STMT-OPENING-CLOSING
+doc_type: statement
+currency: USD
+notes: Constructed statement extract. Closing is labelled; not a bank rec.
+text: |
+  STATEMENT 2026-02
+  Account 1001-Cash
+  Opening $1,000.00
+  Deposit $200.00
+  Closing $1,200.00
+gold:
+  - {id: G-ACCT, start: 26, end: 35, label: account, parsed_value: 1001-Cash}
+  - {id: G-OPEN, start: 44, end: 53, label: amount, parsed_value: 1000.0}
+  - {id: G-DEP, start: 62, end: 69, label: amount, parsed_value: 200.0}
+  - {id: G-CLOSE, start: 78, end: 87, label: amount, parsed_value: 1200.0}
+candidate:
+  - {id: A-ACCT, start: 26, end: 35, label: account, parsed_value: 1001-Cash}
+  - {id: A-OPEN, start: 44, end: 53, label: amount, parsed_value: 1000.0}
+  - {id: A-DEP, start: 62, end: 69, label: amount, parsed_value: 200.0}
+  - {id: A-CLOSE, start: 78, end: 87, label: amount, parsed_value: 1200.0}
+rater_b: []

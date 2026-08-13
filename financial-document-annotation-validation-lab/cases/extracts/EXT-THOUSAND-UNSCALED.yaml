@@ -1,0 +1,11 @@
+id: EXT-THOUSAND-UNSCALED
+doc_type: extract
+currency: USD
+notes: Face number 4200 followed by the word thousand. Parsed value is unscaled.
+text: |
+  Note 8. Inventory is stated at $4,200 thousand.
+gold:
+  - {id: G-INV, start: 31, end: 37, label: amount, parsed_value: 4200000.0}
+candidate:
+  - {id: A-INV, start: 31, end: 37, label: amount, parsed_value: 4200.0}
+rater_b: []

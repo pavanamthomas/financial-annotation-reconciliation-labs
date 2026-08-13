@@ -1,0 +1,19 @@
+id: INV-OVERLAP-TOTAL-TAX
+doc_type: invoice
+currency: USD
+notes: Exclusive labels total and tax share a slice.
+text: |
+  INVOICE INV-2001
+  From: Acme Parts
+  Bill to: Beta Stores
+  Date: 2026-01-15
+  Bolts $100.00
+  Nuts $50.00
+  Subtotal $150.00
+  Tax $12.00
+  Total $162.00
+gold: []
+candidate:
+  - {id: A-TAX, start: 119, end: 125, label: tax, parsed_value: 12.0}
+  - {id: A-TOT, start: 119, end: 139, label: total, parsed_value: 162.0}
+rater_b: []
