@@ -208,6 +208,19 @@ def check_invoice_arithmetic(doc: Document, spans: list[Span]) -> list[Finding]:
                     tax=taxes[0] if taxes else 0.0,
                 )
             )
+            if subtotals and abs(totals[0] - subtotals[0]) < 1e-9:
+                out.append(
+                    _finding(
+                        "SUBTOTAL_LABELLED_AS_TOTAL",
+                        "error",
+                        doc,
+                        None,
+                        "the span labelled total equals the subtotal, not line items plus tax",
+                        subtotal=subtotals[0],
+                        labelled_total=totals[0],
+                        expected=expected_total,
+                    )
+                )
     return out
 
 

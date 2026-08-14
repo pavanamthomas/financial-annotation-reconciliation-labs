@@ -32,6 +32,7 @@ def test_flagship_schema_passes_arithmetic_fails():
     assert "SCHEMA_SPAN_BOUNDS" not in codeset
     assert "PARSE_MISMATCH" not in codeset
     assert "TOTAL_ARITHMETIC" in codeset
+    assert "SUBTOTAL_LABELLED_AS_TOTAL" in codeset
     arith = next(f for f in findings if f.code == "TOTAL_ARITHMETIC")
     assert abs(float(arith.evidence["expected"]) - 1080.0) < 1e-12
     assert abs(float(arith.evidence["labelled_total"]) - 1000.0) < 1e-12
