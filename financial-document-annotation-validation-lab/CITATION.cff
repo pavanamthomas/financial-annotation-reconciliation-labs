@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: If you use this repository, please cite it as below.
+type: software
+title: financial-document-annotation-validation-lab
+abstract: Validate constructed financial-document annotations. Passing schema is not a validated extraction.
+authors:
+  - family-names: Thomas
+    given-names: Pavanam
+    email: thomaspavanam@gmail.com
+    alias: pavanamthomas
+license: MIT
+version: 0.1.0
+date-released: "2026-08-16"
+repository-code: https://cursor.com/codebase/pavanam-thomas/fin-check
+url: https://cursor.com/codebase/pavanam-thomas/fin-check
+keywords:
+  - document annotation
+  - information extraction
+  - financial documents
+  - validation

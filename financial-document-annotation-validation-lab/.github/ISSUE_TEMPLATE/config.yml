@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Out of scope for this lab
+    url: https://cursor.com/codebase/pavanam-thomas/fin-check
+    about: OCR, EDGAR dumps, and dual-coding this YAML corpus stay in ROADMAP.md.
