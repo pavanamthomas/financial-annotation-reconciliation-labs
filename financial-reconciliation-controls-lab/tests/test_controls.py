@@ -21,6 +21,7 @@ def test_flagship_ties_and_is_not_clean():
     assert abs(adjusted_bank(rec) - 10000.0) < 1e-12
     found = codes(rec)
     assert "DOUBLE_COUNT_CLEARED_ITEM" in found
+    assert "ZERO_UNEXPLAINED_IS_NOT_CLEAN" in found
     assert "UNEXPLAINED_DIFFERENCE" not in found
 
 

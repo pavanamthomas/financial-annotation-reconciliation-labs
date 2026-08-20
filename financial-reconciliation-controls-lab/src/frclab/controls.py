@@ -80,6 +80,28 @@ def check_stale_outstanding(rec: Reconciliation) -> list[Finding]:
     return out
 
 
+def check_zero_unexplained_not_clean(rec: Reconciliation) -> list[Finding]:
+    if abs(unexplained(rec)) > 1e-9:
+        return []
+    stale = check_stale_outstanding(rec)
+    if not stale:
+        return []
+    return [
+        _finding(
+            "ZERO_UNEXPLAINED_IS_NOT_CLEAN",
+            "error",
+            rec,
+            stale[0].ref,
+            "accuracy",
+            "the rec ties, but only after a reconciling item that is already on the bank statement",
+            unexplained=0.0,
+            stale_ref=stale[0].ref,
+            adjusted_bank=adjusted_bank(rec),
+            book_balance=rec.book_balance,
+        )
+    ]
+
+
 def check_completeness(rec: Reconciliation) -> list[Finding]:
     book_refs = {line.ref for line in rec.book_lines}
     item_refs = {item.ref for item in rec.items}
@@ -207,6 +229,7 @@ def evaluate_controls(rec: Reconciliation) -> list[Finding]:
     findings: list[Finding] = []
     findings.extend(check_unexplained(rec))
     findings.extend(check_stale_outstanding(rec))
+    findings.extend(check_zero_unexplained_not_clean(rec))
     findings.extend(check_completeness(rec))
     findings.extend(check_existence(rec))
     findings.extend(check_cutoff(rec))
