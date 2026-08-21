@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: See remaining bounds
+    url: https://cursor.com/codebase/pavanam-thomas/fin-check
+    about: BAI2/CAMT parsers and sampling of live recs stay in ROADMAP.md.

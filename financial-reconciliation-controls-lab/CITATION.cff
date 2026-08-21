@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: If you use this repository, please cite it as below.
+type: software
+title: financial-reconciliation-controls-lab
+abstract: Reconciliation control tests on constructed ledgers. A zero unexplained difference is not a clean reconciliation.
+authors:
+  - family-names: Thomas
+    given-names: Pavanam
+    email: thomaspavanam@gmail.com
+    alias: pavanamthomas
+license: MIT
+version: 0.1.0
+date-released: "2026-08-21"
+repository-code: https://cursor.com/codebase/pavanam-thomas/fin-check
+url: https://cursor.com/codebase/pavanam-thomas/fin-check
+keywords:
+  - reconciliation
+  - internal controls
+  - bank reconciliation
+  - three-way match
