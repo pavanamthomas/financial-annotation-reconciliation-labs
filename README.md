@@ -1,4 +1,4 @@
-# fin-check
+# financial-annotation-reconciliation-labs
 
 Dr. Pavanam Thomas · [pavanamthomas](https://github.com/pavanamthomas) · thomaspavanam@gmail.com  
 Copyright 2026 · MIT License
@@ -24,7 +24,7 @@ python scripts/run_all.py
 Same four commands in the other two directories. Root CI runs all three.
 
 ```bash
-origin repo clone pavanam-thomas/fin-check
+git clone https://github.com/pavanamthomas/financial-annotation-reconciliation-labs.git
 ```
 
 A green badge is not an audit opinion. The interesting cases are in each `CASE_STUDY.md` and `docs/failures_and_corrections.md`.
